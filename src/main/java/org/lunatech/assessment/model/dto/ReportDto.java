@@ -12,13 +12,13 @@ public class ReportDto {
     public ReportDto() {
         this.countriesWithHighestNumberOfAirports = new ArrayList<CountryCountDto>();
         this.countriesWithLowestNumberOfAirports = new ArrayList<CountryCountProjection>();
-        this.countryRunwayTypes = new HashMap<String, Set<String>>();
+        this.countryRunwayTypes = new ArrayList<CountryRunwayTypeDto>();
         this.runwayIdentCounts = new ArrayList<RunwayIdentCountDto>();
     }
 
     private List<CountryCountDto> countriesWithHighestNumberOfAirports;
     private List<CountryCountProjection> countriesWithLowestNumberOfAirports;
-    private Map<String, Set<String>> countryRunwayTypes;
+    private List<CountryRunwayTypeDto> countryRunwayTypes;
     private List<RunwayIdentCountDto> runwayIdentCounts;
 
     public List<CountryCountDto> getCountriesWithHighestNumberOfAirports() {
@@ -37,11 +37,11 @@ public class ReportDto {
         this.countriesWithLowestNumberOfAirports = countriesWithLowestNumberOfAirports;
     }
 
-    public Map<String, Set<String>> getCountryRunwayTypes() {
+    public List<CountryRunwayTypeDto> getCountryRunwayTypes() {
         return countryRunwayTypes;
     }
 
-    public void setCountryRunwayTypes(Map<String, Set<String>> countryRunwayTypes) {
+    public void setCountryRunwayTypes(List<CountryRunwayTypeDto> countryRunwayTypes) {
         this.countryRunwayTypes = countryRunwayTypes;
     }
 

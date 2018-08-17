@@ -19,7 +19,7 @@ import java.util.Set;
 public interface IRunwayRepository extends JpaRepository<Runway, String> {
 
     @Query("select distinct(r.surface) from Runway as r where r.surface <> '' and r.airport.country.id = :countryId")
-    Set<String> getRunwayTypesByCountry(@Param("countryId") String countryId);
+    List<String> getRunwayTypesByCountry(@Param("countryId") String countryId);
 
     @Query("select new org.lunatech.assessment.model.dto.RunwayIdentCountDto(r.le_ident, count(r.id)) " +
             "from Runway as r group by r.le_ident order by count(r.id) desc ")

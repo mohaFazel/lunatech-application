@@ -7,20 +7,20 @@ import java.util.List;
  */
 public class CountryRunwayTypeDto {
 
-    public CountryRunwayTypeDto(String countryCode, List<String> runwayTypes) {
-        this.countryCode = countryCode;
+    public CountryRunwayTypeDto(String countryName, List<String> runwayTypes) {
+        this.countryName = countryName;
         this.runwayTypes = runwayTypes;
     }
 
-    private String countryCode;
+    private String countryName;
     private List<String> runwayTypes;
 
-    public String getCountryCode() {
-        return countryCode;
+    public String getCountryName() {
+        return countryName;
     }
 
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
     }
 
     public List<String> getRunwayTypes() {

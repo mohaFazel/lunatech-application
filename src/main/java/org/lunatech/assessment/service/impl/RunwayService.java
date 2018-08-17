@@ -2,6 +2,7 @@ package org.lunatech.assessment.service.impl;
 
 import org.lunatech.assessment.model.Country;
 import org.lunatech.assessment.model.Runway;
+import org.lunatech.assessment.model.dto.CountryRunwayTypeDto;
 import org.lunatech.assessment.model.dto.RunwayIdentCountDto;
 import org.lunatech.assessment.repository.IRunwayRepository;
 import org.lunatech.assessment.service.ICountryService;
@@ -35,12 +36,12 @@ public class RunwayService implements IRunwayService {
     }
 
     @Override
-    public Map<String, Set<String>> getRunwayTypesByCountry() {
-        Map<String, Set<String>> countryRunwayTypes = new HashMap<>();
+    public List<CountryRunwayTypeDto> getRunwayTypesByCountry() {
+        List<CountryRunwayTypeDto> countryRunwayTypes = new ArrayList<>();
         List<Country> countries = countrySrv.getAll();
         countries.stream().forEach(country -> {
-            Set<String> runwayTypes = runwayRepo.getRunwayTypesByCountry(country.getId());
-            countryRunwayTypes.put(country.getName(), runwayTypes);
+            List<String> runwayTypes = runwayRepo.getRunwayTypesByCountry(country.getId());
+            countryRunwayTypes.add(new CountryRunwayTypeDto(country.getName(), runwayTypes));
         });
         return countryRunwayTypes;
     }

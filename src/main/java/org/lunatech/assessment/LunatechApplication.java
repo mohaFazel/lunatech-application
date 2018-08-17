@@ -15,6 +15,6 @@ public class LunatechApplication {
     public static void main(String[] args) {
         SpringApplication.run(LunatechApplication.class, args);
         logger.info("Application Started Successfully");
-        System.out.println("Let's enjoy the Lunatech test CSV");
+        System.out.println("Let's enjoy the Lunatech Application");
     }
 }

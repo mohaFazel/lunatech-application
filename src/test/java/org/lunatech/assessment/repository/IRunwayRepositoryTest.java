@@ -40,7 +40,7 @@ public class IRunwayRepositoryTest {
     @Test
     public void getRunwayTypesByCountry() {
         persistMockEntityForReport();
-        Set<String> runwayTypes = runwayRepo.getRunwayTypesByCountry("13");
+        List<String> runwayTypes = runwayRepo.getRunwayTypesByCountry("13");
         assertTrue(runwayTypes.contains("surface0"));
     }
 

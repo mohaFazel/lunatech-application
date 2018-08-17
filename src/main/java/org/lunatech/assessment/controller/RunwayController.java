@@ -1,6 +1,7 @@
 package org.lunatech.assessment.controller;
 
 import org.lunatech.assessment.model.Runway;
+import org.lunatech.assessment.model.dto.CountryRunwayTypeDto;
 import org.lunatech.assessment.model.dto.RunwayIdentCountDto;
 import org.lunatech.assessment.service.IRunwayService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,7 @@ public class RunwayController {
      * include surface types of that country.
      * */
     @GetMapping("/report/runwayTypesByCountry")
-    public Map<String, Set<String>> getRunwayTypesByCountry(){
+    public List<CountryRunwayTypeDto> getRunwayTypesByCountry(){
         return runwaySrv.getRunwayTypesByCountry();
     }
 
