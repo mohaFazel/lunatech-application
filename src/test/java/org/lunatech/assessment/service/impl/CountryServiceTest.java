@@ -81,9 +81,6 @@ public class CountryServiceTest {
                 return 1L;
             }
         });
-        /*lowest.add(new CountryCountDto("The Vatican", 1L));
-        lowest.add(new CountryCountDto("Lichtenschtein", 2L));
-        lowest.add(new CountryCountDto("Maldive", 2L));*/
         when(airportSrv.getCountriesWithLowestNumberOfAirports()).thenReturn(lowest);
     }
 
