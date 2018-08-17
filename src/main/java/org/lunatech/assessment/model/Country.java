@@ -1,8 +1,7 @@
 package org.lunatech.assessment.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by m.fazel on 8/11/2018.

@@ -1,4 +1,4 @@
-package org.lunatech.assessment.lunatechapplication;
+package org.lunatech.assessment;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

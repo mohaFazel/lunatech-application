@@ -1,4 +1,4 @@
-# LunatechApplication
+# lunatech-application
 
 1. Download three CSV files from Amazon S3 :
 

@@ -9,19 +9,18 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author moha.fazel This class was implemented for the first task query
- *         mentioned in the assessment.
+ * @author moha.fazel
+ * This class was implemented for the first task query mentioned in the assessment.
  */
 @RestController
 @RequestMapping("/api/airport")
-@CrossOrigin("http://localhost:4200")
 public class AirportController {
 
-	@Autowired
-	IAirportService airportSrv;
+    @Autowired
+    IAirportService airportSrv;
 
-	@Autowired
-	ICountryService countrySrv;
+    @Autowired
+    ICountryService countrySrv;
 
     /**
      * Task 1: Query -> get all airport and runways of each country by code.

@@ -1,7 +1,11 @@
 package org.lunatech.assessment.util;
 
 import org.apache.commons.csv.CSVRecord;
+import org.lunatech.assessment.model.Airport;
 import org.lunatech.assessment.model.Runway;
+import org.lunatech.assessment.repository.IAirportRepository;
+import org.lunatech.assessment.service.IAirportService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class RunwayBuilder {
 

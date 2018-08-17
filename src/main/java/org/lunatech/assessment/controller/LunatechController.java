@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author moha.fazel
  * This class is used just to return those actions mentioned in the email
@@ -19,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
  * */
 @RestController
 @RequestMapping("/api/lunatech")
-@CrossOrigin("http://localhost:4200")
 public class LunatechController {
 
     @Autowired

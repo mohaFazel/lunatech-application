@@ -1,13 +1,17 @@
 package org.lunatech.assessment.controller;
 
 import org.lunatech.assessment.model.Runway;
-import org.lunatech.assessment.model.dto.CountryRunwayTypeDto;
 import org.lunatech.assessment.model.dto.RunwayIdentCountDto;
 import org.lunatech.assessment.service.IRunwayService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author moha.fazel
@@ -17,7 +21,6 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/runway")
-@CrossOrigin("http://localhost:4200")
 public class RunwayController {
 
     @Autowired
@@ -43,7 +46,7 @@ public class RunwayController {
      * include surface types of that country.
      * */
     @GetMapping("/report/runwayTypesByCountry")
-    public List<CountryRunwayTypeDto> getRunwayTypesByCountry(){
+    public Map<String, Set<String>> getRunwayTypesByCountry(){
         return runwaySrv.getRunwayTypesByCountry();
     }
 

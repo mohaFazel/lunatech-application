@@ -2,25 +2,23 @@ package org.lunatech.assessment.model.dto;
 
 import org.lunatech.assessment.model.projection.CountryCountProjection;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by m.fazel on 8/12/2018.
  */
 public class ReportDto {
 
-    private List<CountryCountProjection> countriesWithLowestNumberOfAirports;
-
-    private List<CountryCountDto> countriesWithHighestNumberOfAirports;
-    private List<CountryRunwayTypeDto> countryRunwayTypes;
     public ReportDto() {
         this.countriesWithHighestNumberOfAirports = new ArrayList<CountryCountDto>();
         this.countriesWithLowestNumberOfAirports = new ArrayList<CountryCountProjection>();
-        this.countryRunwayTypes = new ArrayList<CountryRunwayTypeDto>();
+        this.countryRunwayTypes = new HashMap<String, Set<String>>();
         this.runwayIdentCounts = new ArrayList<RunwayIdentCountDto>();
     }
+
+    private List<CountryCountDto> countriesWithHighestNumberOfAirports;
+    private List<CountryCountProjection> countriesWithLowestNumberOfAirports;
+    private Map<String, Set<String>> countryRunwayTypes;
     private List<RunwayIdentCountDto> runwayIdentCounts;
 
     public List<CountryCountDto> getCountriesWithHighestNumberOfAirports() {
@@ -39,11 +37,11 @@ public class ReportDto {
         this.countriesWithLowestNumberOfAirports = countriesWithLowestNumberOfAirports;
     }
 
-    public List<CountryRunwayTypeDto> getCountryRunwayTypes() {
+    public Map<String, Set<String>> getCountryRunwayTypes() {
         return countryRunwayTypes;
     }
 
-    public void setCountryRunwayTypes(List<CountryRunwayTypeDto> countryRunwayTypes) {
+    public void setCountryRunwayTypes(Map<String, Set<String>> countryRunwayTypes) {
         this.countryRunwayTypes = countryRunwayTypes;
     }
 

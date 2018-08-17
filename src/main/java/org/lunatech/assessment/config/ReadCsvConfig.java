@@ -13,11 +13,14 @@ import org.lunatech.assessment.util.CountryBuilder;
 import org.lunatech.assessment.util.RunwayBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 
-import static org.lunatech.assessment.util.CSVParserFactory.CSVParserType.*;
+import static org.lunatech.assessment.util.CSVParserFactory.CSVParserType.AIRPORT;
+import static org.lunatech.assessment.util.CSVParserFactory.CSVParserType.COUNTRY;
+import static org.lunatech.assessment.util.CSVParserFactory.CSVParserType.RUNWAY;
 
 /**
  * Created by mohammad on 8/11/2018.
