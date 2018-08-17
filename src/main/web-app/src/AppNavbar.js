@@ -23,7 +23,7 @@ export default class AppNavbar extends Component {
         <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink
-              href="https://twitter.com/oktadev">@oktadev</NavLink>
+              href="https://www.linkedin.com/in/mfazel/">@mfazel</NavLink>
           </NavItem>
         </Nav>
       </Collapse>

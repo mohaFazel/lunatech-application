@@ -16,13 +16,8 @@ class RunwayPerCountryList extends Component {
     fetch('api/runway/report/runwayTypesByCountry')
       .then(response => response.json())
       .then(data => {
-		  let runwayList = [];
-		  Object.keys(data).reduce((obj, key) => {
-			  console.log('key:' + key);
-			  console.log('Object:' + data[key]);
-			  runwayList.push({cityName:key, types:JSON.stringify(data[key])});
-		  })
-		  this.setState({runways: runwayList, isLoading: false})
+		  
+		  this.setState({runways: data, isLoading: false})
 		  });
   }
 
@@ -34,11 +29,11 @@ class RunwayPerCountryList extends Component {
     }
 
     const columns = [{
-		Header: 'City Name',
-		accessor: 'cityName'
+		Header: 'Country Name',
+		accessor: 'countryName'
 	  }, {
 		Header: 'Runway Identifications',
-		accessor: 'types'
+		accessor: 'runwayTypes'
 	  }]
 
     return (
