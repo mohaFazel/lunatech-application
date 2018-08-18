@@ -43,7 +43,7 @@ public class RunwayController {
     /**
      * Task 2: Report -> second part e.g. Type of runways (as indicated in "surface"
      * column) per country.
-     * @return Map of string as key to show country name and Set of string as a value
+     * @return List of CountryRunwayTypeDto which insludes country name and a list of string as a value
      * include surface types of that country.
      * */
     @GetMapping("/report/runwayTypesByCountry")
