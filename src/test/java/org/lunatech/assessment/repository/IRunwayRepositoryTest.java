@@ -55,7 +55,7 @@ public class IRunwayRepositoryTest {
     public void getRunwaysByAirportId() {
         persistMockEntityForReport();
         List<Runway> runways = runwayRepo.getRunwaysByAirportId("42");
-        assertEquals(runways.get(0).getAirport().getName(), "airport4initial2");
+        assertEquals(runways.get(0).getAirport().getName(), "airport42");
     }
 
     private void persistMockEntityForReport() {

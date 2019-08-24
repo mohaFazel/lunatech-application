@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -30,7 +29,7 @@ public class AirportControllerTest {
     public void getAirportsByCode() {
         Pageable pageable = PageRequest.of(0,10);
         try {
-            this.mockMvc.perform(post("/api/airport/query/byCode/{countryCode}", "US")
+            this.mockMvc.perform(get("/api/airport/query/byCode/{countryCode}", "US")
                     .content((new ObjectMapper()).writeValueAsString(pageable))
                     .contentType(APPLICATION_JSON)).andDo(print())
                     .andExpect(status().isOk());
@@ -43,7 +42,7 @@ public class AirportControllerTest {
     public void getAirportsByName() {
         Pageable pageable = PageRequest.of(0,10);
         try {
-            this.mockMvc.perform(post("/api/airport/query/byName/{countryName}", "Iran")
+            this.mockMvc.perform(get("/api/airport/query/byName/{countryName}", "Iran")
                     .content((new ObjectMapper()).writeValueAsString(pageable))
                     .contentType(APPLICATION_JSON)).andDo(print())
                     .andExpect(status().isOk());

@@ -29,7 +29,7 @@ public class LunatechControllerTest {
     public void getQuery() {
         Pageable pageable = PageRequest.of(0,10);
         try {
-            this.mockMvc.perform(post("/api/lunatech/query/{country}", "Austria")
+            this.mockMvc.perform(get("/api/lunatech/query/{country}", "Austria")
                     .content((new ObjectMapper()).writeValueAsString(pageable))
                     .contentType(APPLICATION_JSON)).andDo(print())
                     .andExpect(status().isOk());
